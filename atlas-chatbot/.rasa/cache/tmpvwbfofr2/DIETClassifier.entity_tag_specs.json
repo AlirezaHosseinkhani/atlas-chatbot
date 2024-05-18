@@ -1,0 +1,52 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-date",
+      "2": "I-date",
+      "3": "L-date",
+      "4": "U-date",
+      "5": "B-from_date",
+      "6": "I-from_date",
+      "7": "L-from_date",
+      "8": "U-from_date",
+      "9": "B-from_time",
+      "10": "I-from_time",
+      "11": "L-from_time",
+      "12": "U-from_time",
+      "13": "B-to_date",
+      "14": "I-to_date",
+      "15": "L-to_date",
+      "16": "U-to_date",
+      "17": "B-to_time",
+      "18": "I-to_time",
+      "19": "L-to_time",
+      "20": "U-to_time",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-date": 1,
+      "I-date": 2,
+      "L-date": 3,
+      "U-date": 4,
+      "B-from_date": 5,
+      "I-from_date": 6,
+      "L-from_date": 7,
+      "U-from_date": 8,
+      "B-from_time": 9,
+      "I-from_time": 10,
+      "L-from_time": 11,
+      "U-from_time": 12,
+      "B-to_date": 13,
+      "I-to_date": 14,
+      "L-to_date": 15,
+      "U-to_date": 16,
+      "B-to_time": 17,
+      "I-to_time": 18,
+      "L-to_time": 19,
+      "U-to_time": 20,
+      "O": 0
+    },
+    "num_tags": 21
+  }
+]

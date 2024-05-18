@@ -1,0 +1,125 @@
+version: "3.1"
+
+nlu:
+- intent: request_hourly_absence
+  examples: |
+    - I want an hourly absence request for [May 11](date) from [12:00](from_time) until [15:30](to_time)
+    - I need an hourly absence for [May 11](date) from [11:00](from_time) to [19:20](to_time)
+    - I want an hourly absence from [14:00](from_time) to [17:00](to_time) on [May 11](date)
+    - Can I have an hourly absence on [May 11](date) from [10:00](from_time) to [13:30](to_time)?
+    - I'd like to request an hourly absence on [May 11](date) from [09:00](from_time) to [12:00](to_time)
+    - Please arrange an hourly absence for me on [May 11](date) from [08:00](from_time) to [11:30](to_time)
+    - I'd like an hourly absence from [16:00](from_time) to [18:00](to_time) on [May 11](date)
+    - Can you set up an hourly absence on [May 11](date) from [07:30](from_time) to [10:00](to_time)?
+    - I need to take an hourly absence on [May 11](date) from [13:00](from_time) to [16:00](to_time)
+    - I require an hourly absence on [May 11](date) from [15:00](from_time) to [18:30](to_time)
+
+- intent: request_daily_absence
+  examples: |
+    - I want a daily absence request from [May 11](from_date) to [June 13](to_date)
+    - I need a daily absence from [May 3](from_date) until [June 13](to_date)
+    - I want a daily absence from [June 1](from_date) to [April 14](to_date)
+    - Please arrange a daily absence for me from [May 11](from_date) to [June 13](to_date)
+    - Can I request a daily absence starting from [May 11](from_date) to [June 13](to_date)?
+    - I'd like to have a daily absence from [May 11](from_date) until [June 13](to_date)
+    - Set up a daily absence for me from [May 11](from_date) to [June 13](to_date)
+    - I'd like to request a daily absence starting [May 11](from_date) until [June 13](to_date)
+    - Can you arrange a daily absence for me from [May 11](from_date) to [June 13](to_date)?
+    - I need to take a daily absence from [May 11](from_date) to [June 13](to_date)
+
+- intent: inform
+  examples: |
+    - The start date is [June 12](from_date).
+    - The end date is [June 15](to_date).
+    - The date is [May 14](date).
+    - From [14:00](from_time).
+    - To [15:30](to_time).
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?

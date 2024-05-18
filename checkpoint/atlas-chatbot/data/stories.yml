@@ -1,0 +1,90 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: hourly absence request
+  steps:
+  - intent: request_hourly_absence
+    entities:
+      - date: "May 11"
+      - from_time: "12:00"
+      - to_time: "15:30"
+  - action: action_provide_summary
+
+#- story: ask for missing from_time
+ # steps:
+ # - intent: request_hourly_absence
+ #   entities:
+ #     - date: "May 11"
+ #     - to_time: "15:30"
+ # - slot_was_set:
+ #   - date: "May 11"
+ #   - to_time: "15:30"
+ # - action: action_ask_for_from_time
+ # - intent: inform
+ #   entities:
+ #     - from_time: "12:00"
+ # - slot_was_set:
+ #   - from_time: "12:00"
+ # - action: action_provide_summary
+
+#- story: ask for missing to_time
+# steps:
+# - intent: request_hourly_absence
+#   entities:
+#     - date: "May 11"
+#     - from_time: "12:00"
+# - slot_was_set:
+#   - date: "May 11"
+#   - from_time: "12:00"
+# - action: action_ask_for_to_time
+# - intent: inform
+#   entities:
+#     - to_time: "15:30"
+# - slot_was_set:
+#   - to_time: "15:30"
+# - action: action_provide_summary
+
+- story: ask for missing date
+  steps:
+  - intent: request_hourly_absence
+    entities:
+      - from_time: "12:00"
+      - to_time: "15:30"
+  - slot_was_set:
+    - from_time: "12:00"
+    - to_time: "15:30"
+  - action: action_ask_for_date
+  - intent: inform
+    entities:
+      - date: "May 11"
+  - slot_was_set:
+    - date: "May 11"
+  - action: action_provide_summary

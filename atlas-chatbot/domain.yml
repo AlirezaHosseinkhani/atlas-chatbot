@@ -1,0 +1,103 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - request_hourly_absence
+  - request_daily_absence
+  - inform
+
+entities:
+  - date
+  - from_time
+  - to_time
+  - from_date
+  - to_date
+  
+slots:
+  date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: date
+  from_time:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: from_time
+  to_time:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: to_time
+  from_date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: from_date
+  to_date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: to_date
+
+responses:
+  utter_greet:
+    - text: "Hey! How are you?"
+  
+  utter_goodbye:
+    - text: "Bye"
+
+  utter_happy:
+    - text: ":D"
+  
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+
+  utter_ask_date:
+    - text: "On which date would you like to request the absence?"
+
+  utter_ask_from_time:
+    - text: "What is the start time for your request?"
+
+  utter_ask_to_time:
+    - text: "What is the end time for your request?"
+  
+  utter_ask_from_date:
+    - text: "What is the start date for your daily absence?"
+
+  utter_ask_to_date:
+    - text: "What is the end date for your daily absence?"
+
+  utter_provide_summary:
+    - text: "Here is your absence request: Precard type: hourly absence, Date: {date}, From: {from_time}, To: {to_time}."
+
+  utter_provide_daily_summary:
+    - text: "Here is your DAILY absence request: Precard type: daily absence, From Date: {from_date}, To Date: {to_date}."
+
+forms:
+  hourly_absence_form:
+    required_slots:
+      - date
+      - from_time
+      - to_time
+  daily_absence_form:
+    required_slots:
+      - from_date
+      - to_date
+
+actions:
+  # - action_submit_absence_request
+  - action_reset_all_slots
+  - action_provide_summary
+  # - action_ask_for_date
+  - action_provide_daily_summary
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

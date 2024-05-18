@@ -1,0 +1,77 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - request_hourly_absence
+  - inform
+
+entities:
+  - date
+  - from_time
+  - to_time
+  
+slots:
+  date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: date
+  from_time:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: from_time
+  to_time:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: to_time
+
+responses:
+  utter_greet:
+    - text: "Hey! How are you?"
+
+  utter_cheer_up:
+    - text: "Here is something to cheer you up:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+    - text: "Did that help you?"
+
+  utter_happy:
+    - text: "Great, carry on!"
+
+  utter_goodbye:
+    - text: "Bye"
+
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+  
+  #utter_ask_from_time:
+   # - text: "What is the start time for your request?"
+  
+  #utter_ask_to_time:
+   # - text: "What is the end time for your request?"
+  
+  utter_ask_date:
+    - text: "On which date would you like to request the absence?"
+  
+  utter_provide_summary:
+    - text: "Here is your absence request: Precard type: hourly absence, Date: {date}, From: {from_time}, To: {to_time}."
+  
+actions:
+  - action_provide_summary
+  #- action_ask_for_from_time
+  #- action_ask_for_to_time
+  - action_ask_for_date
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
